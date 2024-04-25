@@ -21,7 +21,7 @@ function Code({ story, blanks }: CodeProps) {
 }
 
 function printStory(story: string, blanks: CBlank[]) {
-  let cleanStoryArr = Array.from(story).filter((c, i, a) => c != '"')
+  let cleanStoryArr = Array.from(story).filter((c, _i, _a) => c != '"')
   let illegalPercentLocs: number[] = []
   for (let i = 0; i < cleanStoryArr.length; i++) {
     if (cleanStoryArr[i] != "%" || (i < cleanStoryArr.length - 1 && cleanStoryArr[i + 1] == "s")) continue
