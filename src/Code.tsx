@@ -9,7 +9,7 @@ let currentPopupTimeout: any = null
 
 function Code({ story, blanks }: CodeProps) {
   return <div id="code-container">
-    <img id="copy-button" src="./Copy.svg" alt="Click to copy" title="Click to copy" onClick={copyCode} />
+    <img id="copy-button" src="./Copy.svg" alt="Click to copy" title="Click to copy" onClick={copyCode} onTouchEnd={copyCode} />
     <pre id="code">
       {"#include\<stdio.h\>"}<br />
       <br />
