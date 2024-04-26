@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Story from './Story.tsx'
 import Blanks from './Blanks.tsx'
 import Code from './Code.tsx'
+import CopyPopup from './CopyPopup.tsx'
 import { CBlank } from './Blanks.tsx'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <Story story={story} setStory={setStory} />
     <Blanks story={story} setCBlanks={setBlanks} />
     <Code story={story} blanks={blanks} />
+    <CopyPopup />
   </>
 }
 

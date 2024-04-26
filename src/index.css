@@ -1,6 +1,8 @@
 :root {
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  display: inline-block;
 
   color: white;
   background-color: #070F2B;
@@ -13,10 +15,19 @@
 }
 
 body {
+  position: relative;
   margin: 0;
-  width: 100svw;
-  min-width: 100svw;
+  height: 100svh;
+  min-height: 100svh;
+  width: 100%;
+  min-width: 100%;
   background: linear-gradient(#1B1A55, #070F2B);
+}
+
+#root {
+  height: 100svh;
+  min-height: 100svh;
+  position: relative;
 }
 
 h1 {
@@ -30,14 +41,12 @@ h1 {
 }
 
 #story-textarea {
-  font-family: "Roboto", sans-serif;
   font-size: 24px;
   display: block;
   position: relative;
   padding: 10px;
   width: 80%;
-  left: 10%;
-  right: 10%;
+  margin: 0 auto;
   border: #535C91 solid 8px;
   border-radius: 10px;
 }
@@ -61,11 +70,6 @@ label {
   font-size: 18px;
 }
 
-label,
-input {
-  font-family: "Roboto", sans-serif;
-}
-
 .labelInput,
 .lengthInput {
   font-size: 16px;
@@ -85,6 +89,34 @@ input {
   border-bottom-left-radius: 0;
 }
 
+#code-container {
+  position: relative;
+}
+
+#copy-button {
+  position: absolute;
+  top: 1em;
+  right: 3.5em;
+  width: 2em;
+}
+
+#copy-button:hover {
+  cursor: pointer;
+}
+
+pre {
+  white-space: pre-wrap;
+  /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+}
+
 #code {
   font-family: "Roboto Mono", monospace;
   margin: 40px;
@@ -92,6 +124,40 @@ input {
   border: #535C91 solid 8px;
   border-radius: 10px;
   background-color: #070F2B;
+}
+
+#copy-popup-container {
+  position: absolute;
+  overflow: hidden;
+  height: fit-content;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#copy-popup {
+  position: relative;
+  font-weight: 700;
+  left: 0;
+  right: 0;
+  max-width: 300px;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #535C91;
+  border: #9290C3 solid 8px;
+  box-sizing: border-box;
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform: translateY(300px);
+  transition: transform 1s ease-out;
+}
+
+#copy-popup-container .popout {
+  transform: translateY(0px);
 }
 
 @media only screen and (max-width: 1100px) {
@@ -109,5 +175,13 @@ input {
 @media only screen and (max-width: 560px) {
   #blanks {
     grid-template-columns: auto;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  #story-textarea {
+    font-size: large;
   }
 }
